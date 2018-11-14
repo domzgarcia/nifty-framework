@@ -100,13 +100,14 @@ class Ignitor {
          * Register + Boot providers
          */
         this._registerProviders()
+        
         await this._bootProviders()
     }
     _registerHelpers(){
-        this._fold.ioc.singleton('@adonisMini/Ignitor/Src/Helpers', () => {
-            return new Helpers(this._appRoot)
-        })
-        this._fold.ioc.alias('@adonisMini/Ignitor/Src/Helpers', 'Helpers')
+        // this._fold.ioc.singleton('@adonisMini/Src/Helpers', () => {
+        //     return new Helpers(this._appRoot)
+        // })
+        // this._fold.ioc.alias('@adonisMini/Src/Helpers', 'Helpers')
     }
     /**
      * Starts the Adonis http server.

@@ -6,7 +6,7 @@ const path = require('path')
 class AppProvider extends ServiceProvider {
     
     async boot () {
-        
+        /** */
     }
     register () {
         this._registerConfig()
@@ -16,8 +16,8 @@ class AppProvider extends ServiceProvider {
     _registerConfig(){
         ioc.singleton('@adonisMini/Src/Config', function(app){
             const Config = require('../src/Config')
-            const Helpers = app.use('@adonisMini/Ignitor/Src/Helpers')
-            return new Config(Helpers.appRoot())
+            // const Helpers = app.use('Helpers')
+            return new Config(global.rootDir)
         })
         this.app.alias('@adonisMini/Src/Config', 'Config')
     }
@@ -25,8 +25,8 @@ class AppProvider extends ServiceProvider {
     _registerEnv(){
         ioc.singleton('@adonisMini/Src/Env', function(app){
             let Env = require('../src/Env')
-            const Helpers = app.use('@adonisMini/Ignitor/Src/Helpers')
-            return new Env(Helpers.appRoot())
+            // const Helpers = app.use('Helpers')
+            return new Env(global.rootDir)
         })
         this.app.alias('@adonisMini/Src/Env', 'Env')
     }
