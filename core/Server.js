@@ -6,8 +6,8 @@ class Server {
 
     }
 
-    initialize(){
-        // Creation of server should be inside this scope
+    wrapped(){
+        // Should your create http inside this scope
         const Config = use('Config')
         console.log(Config.get('database.mysql.connection.host'))
     }
