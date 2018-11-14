@@ -16,7 +16,8 @@ class AppProvider extends ServiceProvider {
     _registerConfig(){
         ioc.singleton('@adonisMini/Src/Config', function(app){
             const Config = require('../src/Config')
-            return new Config(global.rootDir)
+            const location = global.rootDir
+            return new Config(location)
         })
         this.app.alias('@adonisMini/Src/Config', 'Config')
     }
@@ -24,7 +25,8 @@ class AppProvider extends ServiceProvider {
     _registerEnv(){
         ioc.singleton('@adonisMini/Src/Env', function(app){
             let Env = require('../src/Env')
-            return new Env(global.rootDir)
+            const location = global.rootDir
+            return new Env(location)
         })
         this.app.alias('@adonisMini/Src/Env', 'Env')
     }
