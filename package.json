@@ -10,7 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "@adonisjs/fold": "^4.0.9",
-    "debug": "^4.1.0",
     "dotenv": "^6.1.0",
     "lodash": "^4.17.11",
     "pify": "^4.0.1",
