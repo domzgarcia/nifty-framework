@@ -1,0 +1,21 @@
+{
+  "name": "nifty-framework",
+  "version": "1.0.0",
+  "description": "NodeJS framework inspired by laravel-mix and adonisJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dom.garcia@nuworks.ph",
+  "license": "ISC",
+  "devDependencies": {
+    "@adonisjs/fold": "^4.0.9",
+    "@adonisjs/generic-exceptions": "^3.0.1",
+    "debug": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "lodash": "^4.17.11",
+    "require-all": "^3.0.0",
+    "youch": "^2.0.10",
+    "youch-terminal": "^1.0.0"
+  }
+}
