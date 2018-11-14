@@ -50,7 +50,7 @@ class Config {
         dirname: this._configPath,
         filter: /(.*)\.js$/
       })
-      debug('loaded all config files from %s', this._configPath)
+      // debug('loaded all config files from %s', this._configPath)
     } catch (error) {
       if (error.code !== 'ENOENT') {
         throw error

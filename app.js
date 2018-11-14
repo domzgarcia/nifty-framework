@@ -1,8 +1,6 @@
 'use strict'
 
-global.rootDir = __dirname
-
-let { Ignitor } = require('./@adonis-mini/Ignitor')
+let { Ignitor } = require('./@adonis-mini/ignitor')
 
 new Ignitor(require('@adonisjs/fold'))
     .appRoot(__dirname)

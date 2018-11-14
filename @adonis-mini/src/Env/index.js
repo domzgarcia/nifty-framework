@@ -13,8 +13,10 @@ const _ = require('lodash')
 const path = require('path')
 const dotenv = require('dotenv')
 const fs = require('fs')
-const GE = require('@adonisjs/generic-exceptions')
-const debug = require('debug')('adonis:framework')
+
+// const GE = require('@adonisjs/generic-exceptions')
+
+// const debug = require('debug')('adonis:framework')
 
 /**
  * Manages the application environment variables by
@@ -104,7 +106,7 @@ class Env {
        * Dotenv doesn't overwrite existing env variables, so we
        * need to do it manaully by parsing the file.
        */
-      debug('%s environment file from %s', overwrite ? 'merging' : 'loading', options.path)
+      // debug('%s environment file from %s', overwrite ? 'merging' : 'loading', options.path)
 
       /**
        * Loop over values and set them on environment only
@@ -176,7 +178,8 @@ class Env {
     const val = _.get(process.env, key)
 
     if (_.isUndefined(val)) {
-      throw GE.RuntimeException.missingEnvKey(key)
+      // throw GE.RuntimeException.missingEnvKey(key)
+      throw new Error(`RuntimeException.missingEnvKey ${key}`)
     }
 
     return val

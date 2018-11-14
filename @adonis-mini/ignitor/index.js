@@ -3,6 +3,7 @@
 const path = require('path')
 const Youch = require('youch')
 const forTerminal = require('youch-terminal')
+const Helpers = require('./src/Helpers')
 
 class Ignitor {
 
@@ -93,11 +94,19 @@ class Ignitor {
         if (!this._appRoot) {
         throw new Error('Cannot start http server, make sure to register the app root inside server.js file')
         }
+
+        this._registerHelpers()
         /**
          * Register + Boot providers
          */
         this._registerProviders()
         await this._bootProviders()
+    }
+    _registerHelpers(){
+        this._fold.ioc.singleton('@adonisMini/Ignitor/Src/Helpers', () => {
+            return new Helpers(this._appRoot)
+        })
+        this._fold.ioc.alias('@adonisMini/Ignitor/Src/Helpers', 'Helpers')
     }
     /**
      * Starts the Adonis http server.
