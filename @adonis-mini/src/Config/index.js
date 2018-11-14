@@ -44,7 +44,7 @@ class Config {
    *
    * @return {void}
    */
-  syncWithFileSystem () {
+  syncWithFileSystem () { 
     try {
       this._config = requireAll({
         dirname: this._configPath,

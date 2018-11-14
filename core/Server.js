@@ -1,11 +1,15 @@
-class Server {
+'use strict'
 
+class Server {
+    
     constructor(){
 
     }
 
-    attached(){
-        console.log('Server is init')
+    initialize(){
+        // Creation of server should be inside this scope
+        const Config = use('Config')
+        console.log(Config.get('database.mysql.connection.host'))
     }
 }
 

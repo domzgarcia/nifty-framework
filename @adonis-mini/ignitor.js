@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 const path = require('path')
 const Youch = require('youch')
@@ -38,9 +38,6 @@ class Ignitor {
      */
     _registerProviders (){
         const { providers } = this._getAppAttributes()
-
-        console.log(providers)
-
         let providersToRegister = providers ? providers : []
         this._fold.registrar.providers(providersToRegister).register()
     }
