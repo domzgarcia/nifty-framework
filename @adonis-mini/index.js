@@ -95,20 +95,22 @@ class Ignitor {
         throw new Error('Cannot start http server, make sure to register the app root inside server.js file')
         }
 
-        this._registerHelpers()
+        // this._registerHelpers()
         /**
          * Register + Boot providers
          */
         this._registerProviders()
 
         await this._bootProviders()
+
     }
-    _registerHelpers(){
-        // this._fold.ioc.singleton('@adonisMini/Src/Helpers', () => {
-        //     return new Helpers(this._appRoot)
-        // })
-        // this._fold.ioc.alias('@adonisMini/Src/Helpers', 'Helpers')
-    }
+    // _registerHelpers () {
+    //     this._fold.ioc.singleton('@adonisMini/Src/Helpers', () => {
+    //         return new Helpers(this._appRoot)
+    //     })
+    //     this._fold.ioc.alias('@adonisMini/Src/Helpers', 'Helpers')
+    // }
+
     /**
      * Starts the Adonis http server.
      *

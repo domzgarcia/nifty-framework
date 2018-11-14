@@ -2,7 +2,7 @@
 
 global.rootDir = __dirname
 
-let { Ignitor } = require('./@adonis-mini/ignitor')
+let { Ignitor } = require('./@adonis-mini')
 
 new Ignitor(require('@adonisjs/fold'))
     .appRoot(__dirname)
