@@ -4,10 +4,10 @@ const Env = use('Env')
 
 module.exports = {
     
-    connection: Env.get('DB_CONNECTION', 'mysql'),
+    connection: Env.get('DB_CONNECTION', 'mongodb'),
 
-    mysql: {
-        client: 'mysql',
+    mongodb: {
+        client: 'mongodb',
         connection: {
             host: Env.get('DB_HOST', 'localhost'),
             port: Env.get('DB_PORT', ''),
