@@ -3,6 +3,7 @@
 const path = require('path')
 const Youch = require('youch')
 const forTerminal = require('youch-terminal')
+const Helpers = require('./src/Helpers')
 
 class Ignitor {
 
@@ -24,6 +25,22 @@ class Ignitor {
     appRoot (location){
         this._appRoot = location
         return this
+    }
+    /**
+     * Registers the helpers module to the IoC container.
+     * Required by a lot of providers before hand.
+     *
+     * @method _registerHelpers
+     *
+     * @return {void}
+     *
+     * @private
+     */
+    _registerHelpers () {
+        this._fold.ioc.singleton('@adonisMini/Src/Helpers', () => {
+          return new Helpers(this._appRoot)
+        })
+        this._fold.ioc.alias('@adonisMini/Src/Helpers', 'Helpers')
     }
     /**
      * Registers an array of providers to the Ioc container. This
@@ -94,6 +111,7 @@ class Ignitor {
         throw new Error('Cannot start http server, make sure to register the app root inside server.js file')
         }
 
+        this._registerHelpers()
         /**
          * Register + Boot providers
          */
