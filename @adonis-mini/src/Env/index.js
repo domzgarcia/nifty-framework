@@ -14,10 +14,6 @@ const path = require('path')
 const dotenv = require('dotenv')
 const fs = require('fs')
 
-// const GE = require('@adonisjs/generic-exceptions')
-
-// const debug = require('debug')('adonis:framework')
-
 /**
  * Manages the application environment variables by
  * reading the `.env` file from the project root.
@@ -29,13 +25,13 @@ const fs = require('fs')
  * Can define different location by setting `ENV_PATH`
  * environment variable.
  *
- * @binding Adonis/Src/Env
- * @group Core
- * @alias Env
- * @singleton
+ * #binding Adonis/Src/Env
+ * #group Core
+ * #alias Env
+ * #singleton
  *
- * @class Env
- * @constructor
+ * #class Env
+ * #constructor
  */
 class Env {
   constructor (appRoot) {
@@ -106,7 +102,6 @@ class Env {
        * Dotenv doesn't overwrite existing env variables, so we
        * need to do it manaully by parsing the file.
        */
-      // debug('%s environment file from %s', overwrite ? 'merging' : 'loading', options.path)
 
       /**
        * Loop over values and set them on environment only
@@ -178,7 +173,6 @@ class Env {
     const val = _.get(process.env, key)
 
     if (_.isUndefined(val)) {
-      // throw GE.RuntimeException.missingEnvKey(key)
       throw new Error(`RuntimeException.missingEnvKey ${key}`)
     }
 

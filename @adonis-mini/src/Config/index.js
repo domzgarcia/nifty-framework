@@ -17,15 +17,15 @@ const debug = require('debug')('adonis:framework')
  * Manages configuration by recursively reading all
  * `.js` files from the `config` folder.
  *
- * @alias Config
- * @binding Adonis/Src/Config
- * @group Core
- * @singleton
+ * #alias Config
+ * #binding Adonis/Src/Config
+ * #group Core
+ * #singleton
  *
- * @class Config
- * @constructor
+ * #class Config
+ * #constructor
  *
- * @param {String} configPath Absolute path from where to load the config files from
+ * #param {String} configPath Absolute path from where to load the config files from
  */
 class Config {
   constructor (configPath) {

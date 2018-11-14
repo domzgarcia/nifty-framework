@@ -16,13 +16,13 @@ const pify = require('pify')
  * This class returns absolute path to commonly
  * used AdonisJs directories.
  *
- * @namespace Adonis/Src/Helpers
- * @alias Helpers
+ * #namespace Adonis/Src/Helpers
+ * #alias Helpers
  * @singleton
  * @group Core
  *
- * @class Helpers
- * @constructor
+ * #class Helpers
+ * #constructor
  */
 class Helpers {
   constructor (appRoot) {
