@@ -8,7 +8,7 @@
   },
   "author": "dom.garcia@nuworks.ph",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@adonisjs/fold": "^4.0.9",
     "dotenv": "^6.1.0",
     "lodash": "^4.17.11",
