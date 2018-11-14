@@ -1,6 +1,6 @@
 'use strict'
 
-class Wrapper {
+class Support {
     
     constructor(){
         /** */
@@ -15,4 +15,4 @@ class Wrapper {
     }
 }
 
-module.exports = Wrapper
+module.exports = Support
