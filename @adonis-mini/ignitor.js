@@ -3,7 +3,7 @@
 const path = require('path')
 const Youch = require('youch')
 const forTerminal = require('youch-terminal')
-const Helpers = require('./src/Helpers')
+// const Helpers = require('./src/Helpers')
 
 class Ignitor {
 
@@ -100,7 +100,7 @@ class Ignitor {
          * Register + Boot providers
          */
         this._registerProviders()
-        
+
         await this._bootProviders()
     }
     _registerHelpers(){

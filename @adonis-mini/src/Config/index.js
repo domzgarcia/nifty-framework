@@ -11,7 +11,6 @@
 
 const _ = require('lodash')
 const requireAll = require('require-all')
-const debug = require('debug')('adonis:framework')
 
 /**
  * Manages configuration by recursively reading all
@@ -50,7 +49,6 @@ class Config {
         dirname: this._configPath,
         filter: /(.*)\.js$/
       })
-      // debug('loaded all config files from %s', this._configPath)
     } catch (error) {
       if (error.code !== 'ENOENT') {
         throw error
