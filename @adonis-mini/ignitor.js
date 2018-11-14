@@ -9,7 +9,7 @@ class Ignitor {
     constructor (fold){
         this._fold = fold
         this._appRoot = null
-        this._appFile = path.join(__dirname, '/start/app.js')
+        this._appFile = '@adonis-mini/start/app.js'
     }
 
     /**
@@ -57,7 +57,7 @@ class Ignitor {
      */
     _getAppAttributes () {
         return require(
-            this._appFile
+            path.join( this._appRoot, this._appFile)
         )
     }
     /**

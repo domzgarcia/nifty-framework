@@ -1,10 +1,14 @@
 const path = require('path')
 
-let resolvePath = path.resolve('@adonis-mini/providers')
+let providersPath = path.resolve('@adonis-mini/providers')
 
+/**
+ * Since providers are not coming from any npm module
+ * We need to resolve the path from providers folder
+ */
 const providers = [
-    path.join(resolvePath, 'EnvProvider'),
-    path.join(resolvePath, 'ConfigProvider')
+    path.join(providersPath, 'EnvProvider'),
+    path.join(providersPath, 'ConfigProvider')
 ]
 
 module.exports = { providers }
