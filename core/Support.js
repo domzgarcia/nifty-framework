@@ -5,7 +5,7 @@ class Wrapper {
     constructor(){
         /** */
     }
-    wrapServer(){
+    express(){
         /*
         * Server will be created inside this scope
         * We now have Ioc access across the app
