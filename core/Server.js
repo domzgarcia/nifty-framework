@@ -2,25 +2,18 @@
 
 const express = require('express')
 const app = express()
+const Config = use('Config')
 
 class Server {
     
-    constructor(){
-        /** */
+    constructor () {
+        this._port = Config.get('app.port')
+        app.get('/', (req, res) => this.index(req, res) )
+        app.listen(this._port, () => console.log(`Example app listening on port ${this._port}!`))
     }
-
-    wrapped(){
-        /*
-        * Should you create your http inside this scope
-        * We now have Ioc access such as ConfigProvider
-        */
-        const Config = use('Config')
-        
-        const port = Config.get('app.port')
-        
-        app.get('/', (req, res) => res.send('Hello World!'))
-        
-        app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+    
+    index(req, res){
+        return res.send('Hello World!')
     }
 }
 
