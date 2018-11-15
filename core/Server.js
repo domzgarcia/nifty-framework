@@ -8,12 +8,11 @@ class Server {
     
     constructor () {
         this._port = Config.get('app.port')
-        app.get('/', (req, res) => this.index(req, res) )
-        app.listen(this._port, () => console.log(`Example app listening on port ${this._port}!`))
+        this._setUpGenericRoutes()
     }
-    
-    index(req, res){
-        return res.send('Hello World!')
+    _setUpGenericRoutes(){
+        app.get('/', (req, res) => res.send('Hello World!'))
+        app.listen(this._port, () => console.log(`Example app listening on port ${this._port}!`))
     }
 }
 

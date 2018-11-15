@@ -1,29 +1,33 @@
 'use strict'
 
-let { ioc, ServiceProvider } = require('@adonisjs/fold')
+let { ServiceProvider } = require('@adonisjs/fold')
 const path = require('path')
 
 class AppProvider extends ServiceProvider {
     
-    async boot () {
-        
+    boot () {
+        /**
+         * Gets the provider load the env file.
+         */
+        this.app.use('Env')
     }
+
     register () {
         this._registerConfig()
         this._registerEnv()
     }
 
-    _registerConfig(){
-        ioc.singleton('@adonisMini/Src/Config', function(app){
+    _registerConfig () {
+        this.app.singleton('@adonisMini/Src/Config', function(){
             const Config = require('../src/Config')
             const Helpers = use('Helpers')
-            return new Config( path.join(Helpers.appRoot(), 'core/config') )
+            return new Config(path.join(Helpers.appRoot(), 'core/config'))
         })
         this.app.alias('@adonisMini/Src/Config', 'Config')
     }
 
-    _registerEnv(){
-        ioc.singleton('@adonisMini/Src/Env', function(app){
+    _registerEnv () {
+        this.app.singleton('@adonisMini/Src/Env', function(){
             let Env = require('../src/Env')
             const Helpers = use('Helpers')
             return new Env(Helpers.appRoot())

@@ -116,9 +116,8 @@ class Ignitor {
          * Register + Boot providers
          */
         this._registerProviders()
-
+        
         await this._bootProviders()
-
     }
     /**
      * Starts the Adonis http server.
