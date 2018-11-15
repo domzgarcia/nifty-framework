@@ -1,10 +1,7 @@
 'use strict'
 
-class Support {
+class Setup {
     
-    constructor(){
-        /** */
-    }
     express(){
         /*
         * Server will be created inside this scope
@@ -15,4 +12,4 @@ class Support {
     }
 }
 
-module.exports = Support
+module.exports = Setup
